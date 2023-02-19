@@ -2,9 +2,13 @@ body{
         font-family: Georgia, "Times New Roman", Times, serif;
         
 }
-.weather-app{
+
+.weather-app-wrapper{
     max-width: 900px;
-    margin: 100px auto;
+    margin: 30px auto;
+}
+.weather-app{
+    
     padding: 25px;
     border: 4px #0047ab;
     border-radius: 30px;
@@ -28,6 +32,12 @@ ul{
     text-align: right;
     color: blanchedalmond;
     font-size: 20px;
+}
+
+.weather-icon-and-temperature{
+    border: 1px #0047ab;
+    border-radius: 50%;
+    background-color: #24a4e0;
 }
 
 .current-weather-icon{

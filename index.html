@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
+      <div class="weather-app-wrapper">
+  
+
       <div class="weather-app">
       <nav class="navbar navbar-light" id="search-element">
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Enter city" aria-label="Search">
-          <button type="button" class="btn btn-success">Success</button>
-          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-success">Search</button>
+          <button type="button" class="btn btn-primary">Current Location</button>
         </form>
         
       </nav>
@@ -38,17 +41,22 @@
           Wind: 10%
         </li>
       </ul>
-    <img src="images/2682849_cloud_cloudy_day_forecast_sun_icon.png" alt="partly cloudy" class="current-weather-icon">
+    
+    <div class="weather-icon-and-temperature">
+      <img src="images/2682849_cloud_cloudy_day_forecast_sun_icon.png" alt="partly cloudy" class="current-weather-icon">
 
-    <h2 class="current-temperature-element">
-      12°C 
-    </h2>
-    <small>
-      <a href="https://github.com/AmiraFareh/vanilla-weather-app" target="_blank"> Open-source code</a>
-      by Amira Fareh
-    </small>
+      <h2 class="current-temperature-element">
+        12°C 
+      </h2>
+    </div>
+    
+    
   </div>
-  
+  <small>
+    <a href="https://github.com/AmiraFareh/vanilla-weather-app" target="_blank"> Open-source code</a>
+    by Amira Fareh
+  </small>
+      </div>
     </div>
     
   </body>
