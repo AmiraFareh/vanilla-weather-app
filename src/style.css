@@ -1,0 +1,50 @@
+body{
+        font-family: Georgia, "Times New Roman", Times, serif;
+        
+}
+.weather-app{
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 25px;
+    border: 4px #0047ab;
+    border-radius: 30px;
+    background-color: #1e90ff;
+   
+}
+
+button{
+    color: blanchedalmond;
+}
+
+.current-city-element{
+    position: relative;
+    text-align: right;
+    color: blanchedalmond;
+}
+
+ul{
+    list-style: none;
+    position: relative;
+    text-align: right;
+    color: blanchedalmond;
+    font-size: 20px;
+}
+
+.current-weather-icon{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.current-temperature-element{
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 55px;
+}
+
+small{
+    text-align: center;
+    color: blanchedalmond;
+}
+
+
