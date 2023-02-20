@@ -24,14 +24,21 @@ button{
     position: relative;
     text-align: right;
     color: blanchedalmond;
+    margin-bottom: 0;
 }
 
 ul{
+    margin: 0;
+    padding: 0;
+}
+li{
     list-style: none;
     position: relative;
     text-align: right;
     color: blanchedalmond;
-    font-size: 20px;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .weather-icon-and-temperature{
@@ -49,7 +56,17 @@ ul{
 .current-temperature-element{
     text-align: center;
     color: blanchedalmond;
-    font-size: 55px;
+    
+}
+
+strong{
+    font-size: 65px;
+}
+
+.units{
+    position: relative;
+    font-size: 30px;
+    top: -30px;
 }
 
 small{
