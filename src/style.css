@@ -35,11 +35,14 @@ li{
     list-style: none;
     position: relative;
     text-align: right;
-    text-transform: capitalize;
+    
     color: blanchedalmond;
     font-size: 15px;
     margin: 0;
     padding: 0;
+}
+li:first-letter{
+    text-transform: capitalize;
 }
 
 .weather-icon-and-temperature{

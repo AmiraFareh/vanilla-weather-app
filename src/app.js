@@ -35,6 +35,10 @@ function dispayTemperature(response){
  windElement.innerHTML = Math.round(response.data.wind.speed);
  let dateElement = document.querySelector("#date");
  dateElement.innerHTML = formatDate(response.data.time * 1000);
+ let iconElement = document.querySelector("#icon");
+ iconElement.setAttribute("src", response.data.condition.icon_url);
+ iconElement.setAttribute("alt", description)
+
 
 
 
@@ -43,7 +47,8 @@ function dispayTemperature(response){
 }
 
 let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Auckland&key=${apiKey}`
-console.log(apiUrl);
+let city = "Sydney"
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`
+
 
 axios.get(apiUrl).then(dispayTemperature);
