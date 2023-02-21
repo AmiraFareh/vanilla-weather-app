@@ -21,6 +21,37 @@ function formatDate(timestamp){
 return `${day} ${hours}:${minutes}`
 }
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+    let forcastHTML = `<div class = "row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+    days.forEach(function (day) {
+        forcastHTML = forcastHTML + 
+        `
+        <div class="col-2">
+        <div class="forecast-date">
+          ${day}</div>
+          <img src="images/2682849_cloud_cloudy_day_forecast_sun_icon.png" 
+          alt="clear-sky-day" width="70">
+        
+          
+          <div class="forecast-temperature">
+            <span class="max-temperature">
+              23°
+            </span>
+            <span class="min-temperature">
+              15°
+            </span>
+          </div>
+        </div>
+        `;
+    });
+
+    forcastHTML = forcastHTML + `</div>`;
+    forecastElement.innerHTML = forcastHTML;
+
+}
+
 function dispayTemperature(response){
  let temperatureElement = document.querySelector("#temperature");
  celsiusTemperature = response.data.temperature.current;
@@ -41,6 +72,8 @@ function dispayTemperature(response){
  iconElement.setAttribute("alt", description)
 }
 
+
+
 function displayFahrenheitTemperature(event){
     event.preventDefault();
     celsiusLink.classList.remove("active");
@@ -59,6 +92,7 @@ function displayCelsiusTemperature(event){
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
 }
+
 
 
 
@@ -92,3 +126,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 search("London");
+displayForecast();
