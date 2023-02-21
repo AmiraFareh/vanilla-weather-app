@@ -81,6 +81,16 @@ strong{
     top: -32px;
 }
 
+.forecast{
+   text-align: center;
+   color: blanchedalmond;
+}
+
+.min-temperature{
+    font-size: 14px;
+    opacity: 0.9;
+}
+
 small{
     text-align: center;
     color: black;
