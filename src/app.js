@@ -38,17 +38,26 @@ function dispayTemperature(response){
  let iconElement = document.querySelector("#icon");
  iconElement.setAttribute("src", response.data.condition.icon_url);
  iconElement.setAttribute("alt", description)
-
-
-
-
-
- 
 }
 
-let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
-let city = "Sydney"
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`
+function search(city){
+    let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
+    
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`
+    axios.get(apiUrl).then(dispayTemperature);
+
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    console.log(cityInputElement.value);
+    search(cityInputElement.value);
+}
+
+search("London");
 
 
-axios.get(apiUrl).then(dispayTemperature);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit )
