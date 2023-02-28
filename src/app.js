@@ -21,7 +21,8 @@ function formatDate(timestamp){
 return `${day} ${hours}:${minutes}`
 }
 
-function displayForecast(){
+function displayForecast(response){
+    
     let forecastElement = document.querySelector("#forecast");
     let forcastHTML = `<div class = "row">`;
     let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -52,6 +53,13 @@ function displayForecast(){
 
 }
 
+function getForecast(city){
+  let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
 function dispayTemperature(response){
  let temperatureElement = document.querySelector("#temperature");
  celsiusTemperature = response.data.temperature.current;
@@ -70,6 +78,8 @@ function dispayTemperature(response){
  let iconElement = document.querySelector("#icon");
  iconElement.setAttribute("src", response.data.condition.icon_url);
  iconElement.setAttribute("alt", description)
+ console.log(response.data);
+ getForecast(response.data.city);
 }
 
 
