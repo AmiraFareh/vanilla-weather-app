@@ -1,5 +1,12 @@
 body{
-        font-family: Georgia, "Times New Roman", Times, serif;
+    background: linear-gradient(
+      135deg,
+      rgb(82, 229, 231) 10%,
+      rgb(19, 12, 183) 100%
+    );
+    background-attachment: fixed;
+  
+    font-family: Georgia, "Times New Roman", Times, serif;
         
 }
 
@@ -93,7 +100,7 @@ strong{
 
 small{
     text-align: center;
-    color: black;
+    color: blanchedalmond;
 }
 
 
