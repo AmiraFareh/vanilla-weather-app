@@ -39,10 +39,8 @@ return day
 
 function displayForecast(response){
     let forecast = response.data.daily;
-    console.log(forecast);
     let forecastElement = document.querySelector("#forecast");
     let forcastHTML = `<div class = "row">`;
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
     forecast.forEach(function (forecastDay, index) {
       if(index < 6){
         forcastHTML = forcastHTML + 
@@ -75,14 +73,13 @@ function displayForecast(response){
 function getForecast(coordinates){
   let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`
-  console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
 
 function displayTemperature(response){
  let temperatureElement = document.querySelector("#temperature");
- celsiusTemperature = response.data.temperature.current;
- temperatureElement.innerHTML = Math.round(celsiusTemperature);
+ temperature = response.data.temperature.current;
+ temperatureElement.innerHTML = Math.round(temperature);
  let cityElement = document.querySelector("#city");
  cityElement.innerHTML =response.data.city;
  let descriptionElement = document.querySelector("#description");
@@ -97,16 +94,8 @@ function displayTemperature(response){
  let iconElement = document.querySelector("#icon");
  iconElement.setAttribute("src", response.data.condition.icon_url);
  iconElement.setAttribute("alt", description)
- console.log(response.data);
  getForecast(response.data.coordinates);
 }
-
-
-
-
-
-
-
 
 function search(city){
     let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
@@ -119,7 +108,6 @@ function search(city){
 function handleSubmit(event){
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    console.log(cityInputElement.value);
     search(cityInputElement.value);
 }
 
@@ -134,12 +122,6 @@ function storePosition(position) {
 function getLocation() {
   navigator.geolocation.getCurrentPosition(storePosition);
 }
-
-
-
-
-
-
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit )

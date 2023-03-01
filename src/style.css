@@ -70,14 +70,7 @@ li:first-letter{
     
 }
 
-.current-temperature-element .active{
-    color: blanchedalmond;
-    cursor: default;
-}
 
-.current-temperature-element .active:hover{
-    text-decoration: none;
-}
 strong{
     font-size: 65px;
 }
