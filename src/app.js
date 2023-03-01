@@ -51,7 +51,7 @@ function displayForecast(response){
         <div class="forecast-date">
           ${formatDay(forecastDay.time)}</div>
           <img src=${forecastDay.condition.icon_url}
-          alt="clear-sky-day" width="70">
+           width="70">
         
           
           <div class="forecast-temperature">
@@ -72,14 +72,14 @@ function displayForecast(response){
 
 }
 
-function getForecast(city){
+function getForecast(coordinates){
   let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`
   console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
 
-function dispayTemperature(response){
+function displayTemperature(response){
  let temperatureElement = document.querySelector("#temperature");
  celsiusTemperature = response.data.temperature.current;
  temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -98,7 +98,7 @@ function dispayTemperature(response){
  iconElement.setAttribute("src", response.data.condition.icon_url);
  iconElement.setAttribute("alt", description)
  console.log(response.data);
- getForecast(response.data.city);
+ getForecast(response.data.coordinates);
 }
 
 
@@ -112,7 +112,7 @@ function search(city){
     let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
     
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`
-    axios.get(apiUrl).then(dispayTemperature);
+    axios.get(apiUrl).then(displayTemperature);
 
 }
 
@@ -123,12 +123,29 @@ function handleSubmit(event){
     search(cityInputElement.value);
 }
 
+function storePosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "ce39c90db330162oat1e9c16aa4594f9";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(storePosition);
+}
+
+
+
 
 
 
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit )
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getLocation);
 
 
 
