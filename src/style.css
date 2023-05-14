@@ -71,9 +71,14 @@ li:first-letter{
 }
 
 
-strong{
+#temperature{
     font-size: 65px;
 }
+
+footer {
+    color: white;
+    text-align: center;
+  }
 
 .units{
     position: relative;
@@ -84,6 +89,7 @@ strong{
 .forecast{
    text-align: center;
    color: blanchedalmond;
+  
 }
 
 .min-temperature{
@@ -97,3 +103,22 @@ small{
 }
 
 
+@media (max-width: 900px){
+     .current-city-element{
+        font-size: 20px;
+        line-height: 2;
+        text-align: left;
+      }
+
+    li{
+        font-size: 12px;
+    }
+
+    .units{
+        font-size: 30px;
+        top: -15px;
+    }
+    #temperature{
+       font-size: 40px;
+    }
+}
