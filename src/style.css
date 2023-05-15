@@ -105,20 +105,22 @@ small{
 
 @media (max-width: 900px){
      .current-city-element{
-        font-size: 20px;
+        font-size: 25px;
         line-height: 2;
         text-align: left;
       }
 
     li{
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .units{
-        font-size: 30px;
+        font-size: 25px;
         top: -15px;
     }
     #temperature{
        font-size: 40px;
     }
+
+    
 }
